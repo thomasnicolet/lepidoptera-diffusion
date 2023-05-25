@@ -31,7 +31,7 @@ def train(args):
     for epoch in tepochs:
         logging.info(f"Starting epoch {epoch + 1} of {args.epochs}")
 
-        for i, (images, test) in enumerate(dataloader):
+        for i, (images, _) in enumerate(dataloader):
             images = images.to(device)
             t = diffusion.sample_timesteps(images.shape[0]).to(device)
             x_t, noise = diffusion.noise_images(images, t)  # Forward process
