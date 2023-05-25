@@ -14,13 +14,11 @@ def plot_images(images):
     plt.show()
 
 
-def save_images(image, path, **kwargs):
-    #grid = torchvision.utils.make_grid(image, **kwargs)
-    #nd_arr = grid.permute(1, 2, 0).cpu().numpy()
-    images = [Image.fromarray(img) for img in image]
+def save_images(images, path):
+    """Save first image in list"""
+    images = [Image.fromarray(img) for img in images]
     images[0].save(path)
-    #im = Image.fromarray(nd_arr)
-    #im.save(path)
+
 
 
 def get_data(args):
